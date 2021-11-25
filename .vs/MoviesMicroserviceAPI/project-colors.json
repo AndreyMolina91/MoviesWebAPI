@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "71394de4-d4a3-491d-9f51-1fbe4a0176cc": {
+      "ProjectGuid": "71394de4-d4a3-491d-9f51-1fbe4a0176cc",
+      "DisplayName": "Movies.API",
+      "ColorIndex": 0
+    },
+    "2c8881f5-0359-42cc-8e1d-12d879905e95": {
+      "ProjectGuid": "2c8881f5-0359-42cc-8e1d-12d879905e95",
+      "DisplayName": "Movies.DataAccess",
+      "ColorIndex": 1
+    },
+    "ab2069df-83f3-4bc9-903f-0cf93c652064": {
+      "ProjectGuid": "ab2069df-83f3-4bc9-903f-0cf93c652064",
+      "DisplayName": "Movies.Domain",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    },
+    "b143cf95-98fb-40ef-9332-ae52ba9ae1e1": {
+      "ProjectGuid": "b143cf95-98fb-40ef-9332-ae52ba9ae1e1",
+      "DisplayName": "Movies.Infraestructure",
+      "ColorIndex": 3
+    },
+    "0efdb3a6-6841-4dd8-9140-29ca18fe2ad5": {
+      "ProjectGuid": "0efdb3a6-6841-4dd8-9140-29ca18fe2ad5",
+      "DisplayName": "Movies.Utilities",
+      "ColorIndex": 4
+    },
+    "c2bd72b4-4a5a-4db9-8a77-afbaab6aa3b3": {
+      "ProjectGuid": "c2bd72b4-4a5a-4db9-8a77-afbaab6aa3b3",
+      "DisplayName": "Movies.Services",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

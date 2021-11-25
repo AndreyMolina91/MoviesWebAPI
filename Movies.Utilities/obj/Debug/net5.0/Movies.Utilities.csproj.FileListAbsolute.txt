@@ -1,0 +1,12 @@
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\bin\Debug\net5.0\Movies.Utilities.deps.json
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\bin\Debug\net5.0\Movies.Utilities.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\bin\Debug\net5.0\ref\Movies.Utilities.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\bin\Debug\net5.0\Movies.Utilities.pdb
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\obj\Debug\net5.0\Movies.Utilities.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\obj\Debug\net5.0\Movies.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\obj\Debug\net5.0\Movies.Utilities.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\obj\Debug\net5.0\Movies.Utilities.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\obj\Debug\net5.0\Movies.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\obj\Debug\net5.0\Movies.Utilities.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\obj\Debug\net5.0\ref\Movies.Utilities.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Utilities\obj\Debug\net5.0\Movies.Utilities.pdb

@@ -1,0 +1,15 @@
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\Movies.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\Movies.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\Movies.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\Movies.DataAccess.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\Movies.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\bin\Debug\net5.0\Movies.DataAccess.deps.json
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\bin\Debug\net5.0\Movies.DataAccess.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\bin\Debug\net5.0\ref\Movies.DataAccess.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\bin\Debug\net5.0\Movies.DataAccess.pdb
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\bin\Debug\net5.0\Movies.Domain.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\bin\Debug\net5.0\Movies.Domain.pdb
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\Movies.DataAccess.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\Movies.DataAccess.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\ref\Movies.DataAccess.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.DataAccess\obj\Debug\net5.0\Movies.DataAccess.pdb
