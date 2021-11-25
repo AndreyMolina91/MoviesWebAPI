@@ -1,5 +1,7 @@
-﻿using Movies.DataAccess.Context;
+﻿using AutoMapper;
+using Movies.DataAccess.Context;
 using Movies.Domain.IRepos;
+using Movies.Services.AzureServices;
 
 namespace Movies.Infraestructure.Repositories
 {

@@ -66,19 +66,18 @@ namespace Movies.API.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateMovie(int id, [FromForm] MovieUpsertModelDto movieModelsDto)
         {
-            MovieModels editModel = await _unitOfWork.Movies.GetModelById(id, includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
-            var editModelDB = _mapper.Map(movieModelsDto, editModel);
+            MovieModels movieModels = await _unitOfWork.Movies.GetModelById(id, includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+            var editModel = _mapper.Map(movieModelsDto, movieModels);
             using (var memoryStream = new MemoryStream())
             {
                 await movieModelsDto.Poster.CopyToAsync(memoryStream); //Copiamos el arreglo de bytes en nuestra variable
                 var content = memoryStream.ToArray();
                 var extension = Path.GetExtension(movieModelsDto.Poster.FileName);
 
-                editModelDB.Poster = await _fileStorage.EditFileAsync(content, extension, containerFolder,
-                                                                     movieModelsDto.Poster.ContentType, editModelDB.Poster);
+                editModel.Poster = await _fileStorage.EditFileAsync(content, extension, containerFolder,
+                                                                     movieModelsDto.Poster.ContentType, editModel.Poster);
             }
-            _unitOfWork.Movies.OrderActors(editModelDB);
-            _unitOfWork.SaveData(); 
+            _unitOfWork.SaveData(); //Problemas con identity a la hora de guardar los cambios en la base de datos, Crea nuevo registro no hace update
             return NoContent();
         }
 

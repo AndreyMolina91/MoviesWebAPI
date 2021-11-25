@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Movies.DataAccess.Context;
+﻿using Movies.DataAccess.Context;
 using Movies.Domain.IRepos;
 using Movies.Domain.Models;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Movies.Infraestructure.Repositories
 {
@@ -13,22 +11,6 @@ namespace Movies.Infraestructure.Repositories
         public MovieRepo(ApplicationDbContext context) : base(context)
         {
             _context = context;
-        }
-
-        public async Task<MovieModels> UpdateMovie(MovieModels movieModels)
-        {
-            MovieModels movieModelDB = await _context.MovieModels.FirstOrDefaultAsync(x=>x.Title == movieModels.Title);
-            if (movieModelDB!=null)
-            {
-                movieModelDB.Title = movieModels.Title;
-                movieModelDB.OnCinema = movieModels.OnCinema;
-                movieModelDB.MovieRelease = movieModels.MovieRelease;
-                movieModelDB.Poster = movieModels.Poster;
-                movieModelDB.MoviesAndGenresModels = movieModels.MoviesAndGenresModels;
-                movieModelDB.MoviesAndActorsModels = movieModels.MoviesAndActorsModels;
-
-            }
-            return movieModelDB;
         }
 
         //Metodo para asignar el orden a los actores al insertarlos en la base de datos
