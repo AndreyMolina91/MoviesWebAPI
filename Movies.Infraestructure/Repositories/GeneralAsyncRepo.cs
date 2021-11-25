@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Movies.DataAccess.Context;
 using Movies.Domain.IRepos;
 using Movies.Infraestructure.Dtos;
@@ -41,7 +42,7 @@ namespace Movies.Infraestructure.Repositories
             if (filter != null)
             {
                 //Select * from where filter = al parametro
-                query = query.Where(filter);
+                query = query.Where(filter).Take(5);
             }
 
             if (includeproperties != null)

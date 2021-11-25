@@ -8,6 +8,7 @@ namespace Movies.Infraestructure.Repositories
     public class MovieRepo : GeneralAsyncRepo<MovieModels>, IMovieRepo
     {
         private readonly ApplicationDbContext _context;
+
         public MovieRepo(ApplicationDbContext context) : base(context)
         {
             _context = context;

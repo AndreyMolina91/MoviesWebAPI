@@ -19,7 +19,7 @@ namespace Movies.Infraestructure.Mapping
                 config.CreateMap<ActorModels, ActorPatchDto>().ReverseMap();
                 config.CreateMap<ActorModels, ActorUpsertModelDto>().ReverseMap()
                 .ForMember(x => x.Photo, options => options.Ignore()); //Ignorar el mapeo de foto IformFile a String
-
+                
                 config.CreateMap<MovieModels, MovieModelDto>().ReverseMap();
                 config.CreateMap<MovieModels, MoviePatchDto>().ReverseMap();
                 config.CreateMap<MovieModels, MovieUpsertModelDto>().ReverseMap()
@@ -27,6 +27,7 @@ namespace Movies.Infraestructure.Mapping
                 .ForMember(x => x.MoviesAndGenresModels, options => options.MapFrom(MapMoviesAndGenres))
                 .ForMember(x => x.MoviesAndActorsModels, options => options.MapFrom(MapMoviesAndActors));
             });
+
             //Mapeo personalizado para movies and genres
             List<MoviesAndGenresModels> MapMoviesAndGenres(MovieUpsertModelDto movieUpsertModelDto, MovieModels movieModels)
             {

@@ -5,6 +5,7 @@ using Movies.Domain.IRepos;
 using Movies.Domain.Models;
 using Movies.Infraestructure.Dtos;
 using Movies.Services.AzureServices;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -29,11 +30,29 @@ namespace Movies.API.Controllers
 
         // GET: api/Movies
         [HttpGet]
-        public async Task<IEnumerable<MovieModelDto>> GetMovieModels()
+        public async Task<IEnumerable<MovieModelDto>> GetMovieModels(DateTime? today, bool? onTheaters)
         {
-            var listMovies = await _unitOfWork.Movies.GetAllModel(includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+            if (today!=null)
+            {
+                //today = DateTime.Today;
+                var listMoviesTop5 = await _unitOfWork.Movies
+                .GetAllModel(filter: (x => x.MovieRelease > today));
+                var listMoviesTop5Dto = _mapper.Map<IEnumerable<MovieModelDto>>(listMoviesTop5);
+                return listMoviesTop5Dto;
+            }
+            if (onTheaters == true)
+            {
+                var listMoviesTop5 = await _unitOfWork.Movies
+                .GetAllModel(filter: (x => x.OnCinema == true));
+                var listMoviesTop5Dto = _mapper.Map<IEnumerable<MovieModelDto>>(listMoviesTop5);
+                return listMoviesTop5Dto;
+            }
+
+            var listMovies = await _unitOfWork.Movies
+                .GetAllModel();
             var listDto = _mapper.Map<IEnumerable<MovieModelDto>>(listMovies);
-            return listDto;
+
+            return listDto;   
         }
 
         [HttpPost]

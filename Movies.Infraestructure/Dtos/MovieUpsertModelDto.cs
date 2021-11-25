@@ -25,8 +25,8 @@ namespace Movies.Infraestructure.Dtos
         public List<int> GenresIDs { get; set; }
 
         //ActorID y el personaje de la pelicula
-        [ModelBinder(BinderType = typeof(TypeBinder<List<MoviesAndActorsUpsertDTO>>))]
-        public List<MoviesAndActorsUpsertDTO> Actors { get; set; } 
+        [ModelBinder(BinderType = typeof(TypeBinder<List<MoviesAndActorsUpsertDto>>))]
+        public List<MoviesAndActorsUpsertDto> Actors { get; set; } 
         //Una vez confirmado que esta recibiendo los datos el metodo
         //Vamos a mapear el dto personalizado con formember para que se creen las relaciones
         //entre movies-actores-generos
