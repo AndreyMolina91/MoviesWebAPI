@@ -26,7 +26,41 @@ namespace Movies.Infraestructure.Mapping
                 .ForMember(x => x.Poster, options => options.Ignore())
                 .ForMember(x => x.MoviesAndGenresModels, options => options.MapFrom(MapMoviesAndGenres))
                 .ForMember(x => x.MoviesAndActorsModels, options => options.MapFrom(MapMoviesAndActors));
+
+                config.CreateMap<MovieDetailsDto, MovieModels>().ReverseMap()
+                .ForMember(x => x.ActorDetails, options => options.MapFrom(MapActorDetails))
+                .ForMember(x => x.GenresDetails, options => options.MapFrom(MapGenreDetails));
             });
+            
+            //Mapeo personalizado para Moviedetails que contendrá la información de Actores-Personaje-Pelicula
+            List<ActorDetailsDto> MapActorDetails(MovieModels movieModels, MovieDetailsDto movieDetailsDto)
+            {
+                //Result sera la variable que ccontenga la lista de ActorDetailsDto
+                var Result = new List<ActorDetailsDto>();
+                if (movieModels.MoviesAndActorsModels == null) { return Result; }
+                foreach (var actor in movieModels.MoviesAndActorsModels)
+                {
+                    Result.Add(new ActorDetailsDto{ ActorId = actor.ActorModelsId,                         
+                        CharacterDetails = actor.MovieCharacter,
+                        ActorNameDetails = actor.ActorModels.Name
+                    });
+                }
+                return Result;
+                
+            }
+
+            //Mapeo personalizado para GenresDetailsDto
+            List<GenreDetailsDto> MapGenreDetails(MovieModels movieModels, MovieDetailsDto movieDetailsDto)
+            {
+                var Result = new List<GenreDetailsDto>();
+                if (movieModels.MoviesAndGenresModels == null) { return Result; }
+                foreach (var genre in movieModels.MoviesAndGenresModels)
+                {
+                    Result.Add(new GenreDetailsDto { GenreDetailsId = genre.GenreModelsId, Title = genre.GenreModels.Title});
+                }
+                return Result;
+            }
+
 
             //Mapeo personalizado para movies and genres
             List<MoviesAndGenresModels> MapMoviesAndGenres(MovieUpsertModelDto movieUpsertModelDto, MovieModels movieModels)

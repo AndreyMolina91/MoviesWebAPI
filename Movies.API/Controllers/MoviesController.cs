@@ -28,9 +28,17 @@ namespace Movies.API.Controllers
             _fileStorage = fileStorage;
         }
 
-        // GET: api/Movies
         [HttpGet]
-        public async Task<IEnumerable<MovieModelDto>> GetMovieModels(DateTime? today, bool? onTheaters)
+        public async Task<IEnumerable<MovieDetailsDto>> GetMoviesModelsList()
+        {
+            var listModels = await _unitOfWork.Movies.GetAllModel(includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+            var listModelsDto = _mapper.Map<IEnumerable<MovieDetailsDto>>(listModels);
+            return listModelsDto;
+        }
+
+        // GET: api/Movies
+        [HttpGet("filter")]
+        public async Task<IEnumerable<MovieModelDto>> GetMovieModelsFilter(DateTime? today, bool? onTheaters)
         {
             if (today!=null)//Peliculas cerca a estrenar
             {
@@ -47,7 +55,7 @@ namespace Movies.API.Controllers
                 var listMoviesTop5Dto = _mapper.Map<IEnumerable<MovieModelDto>>(listMoviesTop5);
                 return listMoviesTop5Dto;
             }
-
+            //Lista con actores y generos
             var listMovies = await _unitOfWork.Movies
                 .GetAllModel(includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
             var listDto = _mapper.Map<IEnumerable<MovieModelDto>>(listMovies);
@@ -85,18 +93,22 @@ namespace Movies.API.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<MovieModelDto>> GetMovieById([FromRoute]int id)
+        public async Task<ActionResult<MovieDetailsDto>> GetMovieById([FromRoute]int id)
         {
-            var movieModel = await _unitOfWork.Movies.GetFirstModel(filter:(x=>x.Id == id), includeproperties: "MoviesAndActorsModels");
-            var movieDto = _mapper.Map<MovieModelDto>(movieModel);
+            var movieModel = await _unitOfWork.Movies.GetIncludeThenInclude(id);
+            var movieDto = _mapper.Map<MovieDetailsDto>(movieModel);
             return movieDto;
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateMovie(int id, [FromForm] MovieUpsertModelDto movieUpsertModelDto)
+        public async Task<ActionResult<MovieUpsertModelDto>> UpdateMovie(int id, [FromForm] MovieUpsertModelDto movieUpsertModelDto)
         {
-            var movieModelDB = await _unitOfWork.Movies.GetFirstModel(filter:(x=>x.Id==id), includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+            var movieModelDB = await _unitOfWork.Movies
+                .GetFirstModel(filter:(x=>x.Id==id), 
+                includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+
             var editModel = _mapper.Map(movieUpsertModelDto, movieModelDB);
+
             if (movieUpsertModelDto.Poster != null)
             {
                 //Instancia de memoryStream para extraer el arreglo de bytes del IFormFile 

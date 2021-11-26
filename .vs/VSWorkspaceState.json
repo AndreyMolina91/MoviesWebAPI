@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Movies.API\\Controllers",
     "\\Movies.Infraestructure",
     "\\Movies.Infraestructure\\Mapping",
     "\\Movies.Infraestructure\\Repositories"
