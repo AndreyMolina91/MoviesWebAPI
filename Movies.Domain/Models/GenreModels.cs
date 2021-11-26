@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Movies.Domain.IRepos;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Movies.Domain.Models
 {
-    public class GenreModels
+    public class GenreModels : Iid
     {
         [Key]
         public int Id { get; set; }

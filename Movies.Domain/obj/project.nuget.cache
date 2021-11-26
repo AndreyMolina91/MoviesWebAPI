@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5Z1zyZGcYaDJSJp0ws8akESWq6hZXO5hy+VzHy+nZ87FaBEUFkA61+tum5wzo2XNJx+UtHLa8YZVb+gnhqkZaA==",
+  "dgSpecHash": "0T7gzcyhv4Y5vhBLbn1xd6LLqexZ/56DTVRH+o/qHW9Q1Zyd/bz6CbRPWGvNJR2ju6lNteJSamSxZauZ8IpTNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\MoviesMicroserviceAPI\\Movies.Domain\\Movies.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.12\\microsoft.aspnetcore.jsonpatch.5.0.12.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

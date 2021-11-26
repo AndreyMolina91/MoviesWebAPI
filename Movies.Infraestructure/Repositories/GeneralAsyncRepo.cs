@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Movies.DataAccess.Context;
 using Movies.Domain.IRepos;
-using Movies.Infraestructure.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace Movies.Infraestructure.Repositories
         {
             _context = context;
             _dbSet = _context.Set<T>();
+
         }
 
         public async Task AddModel(T model)
@@ -84,7 +86,7 @@ namespace Movies.Infraestructure.Repositories
         }
 
         public async Task<T> GetModelById(int id)
-        { 
+        {
             return await _dbSet.FindAsync(id);
         }
 
@@ -104,5 +106,6 @@ namespace Movies.Infraestructure.Repositories
         {
             _dbSet.RemoveRange(modelList);
         }
+        
     }
 }
