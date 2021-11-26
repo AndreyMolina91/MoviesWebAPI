@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Movies.Infraestructure",
+    "\\Movies.Infraestructure\\Mapping",
+    "\\Movies.Infraestructure\\Repositories"
   ],
   "SelectedNode": "\\MoviesMicroserviceAPI.sln",
   "PreviewInSolutionExplorer": false

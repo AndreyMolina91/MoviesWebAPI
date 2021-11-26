@@ -32,7 +32,7 @@ namespace Movies.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<MovieModelDto>> GetMovieModels(DateTime? today, bool? onTheaters)
         {
-            if (today!=null)
+            if (today!=null)//Peliculas cerca a estrenar
             {
                 //today = DateTime.Today;
                 var listMoviesTop5 = await _unitOfWork.Movies
@@ -40,7 +40,7 @@ namespace Movies.API.Controllers
                 var listMoviesTop5Dto = _mapper.Map<IEnumerable<MovieModelDto>>(listMoviesTop5);
                 return listMoviesTop5Dto;
             }
-            if (onTheaters == true)
+            if (onTheaters == true)//Peliculas en cines True
             {
                 var listMoviesTop5 = await _unitOfWork.Movies
                 .GetAllModel(filter: (x => x.OnCinema == true));
@@ -49,11 +49,12 @@ namespace Movies.API.Controllers
             }
 
             var listMovies = await _unitOfWork.Movies
-                .GetAllModel();
+                .GetAllModel(includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
             var listDto = _mapper.Map<IEnumerable<MovieModelDto>>(listMovies);
 
             return listDto;   
         }
+
 
         [HttpPost]
         public async Task<ActionResult<MovieUpsertModelDto>> PostMovieModels([FromForm] MovieUpsertModelDto movieUpsertDto)
@@ -82,31 +83,36 @@ namespace Movies.API.Controllers
             return movieUpsertDto;
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateMovie(int id, [FromForm] MovieUpsertModelDto movieModelsDto)
-        {
-            MovieModels movieModels = await _unitOfWork.Movies.GetModelById(id, includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
-            var editModel = _mapper.Map(movieModelsDto, movieModels);
-            using (var memoryStream = new MemoryStream())
-            {
-                await movieModelsDto.Poster.CopyToAsync(memoryStream); //Copiamos el arreglo de bytes en nuestra variable
-                var content = memoryStream.ToArray();
-                var extension = Path.GetExtension(movieModelsDto.Poster.FileName);
-
-                editModel.Poster = await _fileStorage.EditFileAsync(content, extension, containerFolder,
-                                                                     movieModelsDto.Poster.ContentType, editModel.Poster);
-            }
-            _unitOfWork.SaveData(); //Problemas con identity a la hora de guardar los cambios en la base de datos, Crea nuevo registro no hace update
-            return NoContent();
-        }
-
 
         [HttpGet("{id}")]
         public async Task<ActionResult<MovieModelDto>> GetMovieById([FromRoute]int id)
         {
-            var movieModel = await _unitOfWork.Movies.GetModelById(id, includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+            var movieModel = await _unitOfWork.Movies.GetFirstModel(filter:(x=>x.Id == id), includeproperties: "MoviesAndActorsModels");
             var movieDto = _mapper.Map<MovieModelDto>(movieModel);
             return movieDto;
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateMovie(int id, [FromForm] MovieUpsertModelDto movieUpsertModelDto)
+        {
+            var movieModelDB = await _unitOfWork.Movies.GetFirstModel(filter:(x=>x.Id==id), includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+            var editModel = _mapper.Map(movieUpsertModelDto, movieModelDB);
+            if (movieUpsertModelDto.Poster != null)
+            {
+                //Instancia de memoryStream para extraer el arreglo de bytes del IFormFile 
+                using (var memoryStream = new MemoryStream())
+                {
+                    await movieUpsertModelDto.Poster.CopyToAsync(memoryStream); 
+                    var content = memoryStream.ToArray();
+                    var extension = Path.GetExtension(movieUpsertModelDto.Poster.FileName);
+                    movieModelDB.Poster = await _fileStorage.SaveFileAsync(content, extension, containerFolder,
+                                                                         movieUpsertModelDto.Poster.ContentType);
+                }
+            }
+            _unitOfWork.Movies.OrderActors(editModel);
+            _unitOfWork.SaveData();
+            return NoContent();
+           
         }
 
         [HttpPatch("{id}")]

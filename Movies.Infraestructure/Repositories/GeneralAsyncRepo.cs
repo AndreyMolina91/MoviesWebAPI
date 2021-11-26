@@ -83,17 +83,8 @@ namespace Movies.Infraestructure.Repositories
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<T> GetModelById(int id, string includeproperties = null)
-        {
-            IQueryable<T> query = _dbSet;
-
-            if (includeproperties != null)
-            {
-                foreach (var item in includeproperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    query = query.Include(item);
-                }
-            }
+        public async Task<T> GetModelById(int id)
+        { 
             return await _dbSet.FindAsync(id);
         }
 

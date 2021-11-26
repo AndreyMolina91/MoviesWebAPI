@@ -12,7 +12,7 @@ namespace Movies.Domain.IRepos
 
         //Obtener Promo o Rating por id
         /*1*/
-        Task<T> GetModelById(int id, string includeproperties = null);
+        Task<T> GetModelById(int id);
 
         //Obtener Lista de T IENumerable con consultas Linq
         /*2*/
