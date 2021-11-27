@@ -156,3 +156,6 @@ C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\M
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\NetTopologySuite.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\NetTopologySuite.IO.SqlServerBytes.dll

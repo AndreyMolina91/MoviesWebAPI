@@ -10,3 +10,4 @@ C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Domain\obj\Debug\net5.
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Domain\obj\Debug\net5.0\Movies.Domain.dll
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Domain\obj\Debug\net5.0\ref\Movies.Domain.dll
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Domain\obj\Debug\net5.0\Movies.Domain.pdb
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.Domain\obj\Debug\net5.0\EFCoreSqlServerNetTopologySuite.cs

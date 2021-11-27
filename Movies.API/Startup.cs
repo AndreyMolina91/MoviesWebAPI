@@ -29,7 +29,9 @@ namespace Movies.API
         {
             //AppDbContext
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
+            options.UseSqlServer(Configuration.GetConnectionString("SqlServer"),
+            sqlSererOptions => sqlSererOptions.UseNetTopologySuite()
+            ));
 
             //Unidad de trabajo
             services.AddScoped<IUnitOfWork, UnitOfWork>(); //Scoped para que se inicialice solo al usar
