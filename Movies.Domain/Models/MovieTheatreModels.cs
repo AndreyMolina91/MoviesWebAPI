@@ -10,6 +10,6 @@ namespace Movies.Domain.Models
         [StringLength(60)]
         public string Name { get; set; }
         //Listado con prop de navegación hacia la entidad con relaciones
-        public List<MoviesAndMovieTheatresModels> MoviesAndMovieTheatresList { get; set; }
+        public List<MoviesAndMovieTheatresModels> MoviesAndMovieTheatresModels { get; set; }
     }
 }

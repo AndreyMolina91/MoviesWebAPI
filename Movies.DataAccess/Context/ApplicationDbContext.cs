@@ -19,16 +19,27 @@ namespace Movies.DataAccess.Context
             modelBuilder.Entity<MoviesAndGenresModels>()
                .HasKey(x => new { x.GenreModelsId, x.MovieModelsId });
 
+            modelBuilder.Entity<MoviesAndMovieTheatresModels>()
+                .HasKey(x => new { x.MovieModelsId, x.MovieTheatreModelsId });
+
             base.OnModelCreating(modelBuilder);//uso de Identity db context
         }
 
         //DbSets para modelos sin relaciones
+        //Entidad generos
         public DbSet<GenreModels> GenresModels { get; set; }
+        //Entidad actores
         public DbSet<ActorModels> ActorModels { get; set; }
+        //Entidad peliculas
         public DbSet<MovieModels> MovieModels { get; set; }
 
-        //DbSet para clases de relacion muchos a muchos
+        //Relacion entre peliculas y generos
         public DbSet<MoviesAndGenresModels> MoviesAndGenresModels { get; set; }
+        //Relacion entre peliculas y actores
         public DbSet<MoviesAndActorsModels> MoviesAndActorsModels { get; set; }
+        //Entidad teatros
+        public DbSet<MovieTheatreModels> MovieTheatreModels { get; set; }
+        //Relacion entre peliculas y teatros
+        public DbSet<MoviesAndMovieTheatresModels> MoviesAndMovieTheatresModels { get; set; }
     }
 }

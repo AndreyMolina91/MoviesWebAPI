@@ -14,9 +14,9 @@ namespace Movies.Domain.Models
         public bool OnCinema { get; set; }
         public DateTime MovieRelease { get; set; }
         public string Poster { get; set; }
-        public List<MoviesAndActorsModels> MoviesAndActorsList { get; set; } //Clase con las relaciones y llaves de muchos a muchos
-        public List<MoviesAndGenresModels> MoviesAndGenreList { get; set; } //Clase con las relaciones y llaves de muchos a muchos
-        public List<MoviesAndMovieTheatresModels> MoviesAndMovieTheatresList { get; set; } //Clase con las relaciones y llaves de muchos a muchos
+        public List<MoviesAndActorsModels> MoviesAndActorsModels { get; set; } //Clase con las relaciones y llaves de muchos a muchos
+        public List<MoviesAndGenresModels> MoviesAndGenresModels { get; set; } //Clase con las relaciones y llaves de muchos a muchos
+        public List<MoviesAndMovieTheatresModels> MoviesAndMovieTheatresModels { get; set; } //Clase con las relaciones y llaves de muchos a muchos
 
     }
 }

@@ -24,12 +24,15 @@ namespace Movies.Infraestructure.Mapping
                 config.CreateMap<MovieModels, MoviePatchDto>().ReverseMap();
                 config.CreateMap<MovieModels, MovieUpsertModelDto>().ReverseMap()
                 .ForMember(x => x.Poster, options => options.Ignore())
-                .ForMember(x => x.MoviesAndGenreList, options => options.MapFrom(MapMoviesAndGenres))
-                .ForMember(x => x.MoviesAndActorsList, options => options.MapFrom(MapMoviesAndActors));
+                .ForMember(x => x.MoviesAndGenresModels, options => options.MapFrom(MapMoviesAndGenres))
+                .ForMember(x => x.MoviesAndActorsModels, options => options.MapFrom(MapMoviesAndActors));
 
                 config.CreateMap<MovieDetailsDto, MovieModels>().ReverseMap()
                 .ForMember(x => x.ActorDetails, options => options.MapFrom(MapActorDetails))
                 .ForMember(x => x.GenresDetails, options => options.MapFrom(MapGenreDetails));
+
+                //Mapeos de teatros de cine
+                config.CreateMap<MovieTheatreUpsertDto, MovieTheatreModels>().ReverseMap();
             });
             
             //Mapeo personalizado para Moviedetails que contendrá la información de Actores-Personaje-Pelicula
@@ -37,8 +40,8 @@ namespace Movies.Infraestructure.Mapping
             {
                 //Result sera la variable que ccontenga la lista de ActorDetailsDto
                 var Result = new List<ActorDetailsDto>();
-                if (movieModels.MoviesAndActorsList == null) { return Result; }
-                foreach (var actor in movieModels.MoviesAndActorsList)
+                if (movieModels.MoviesAndActorsModels == null) { return Result; }
+                foreach (var actor in movieModels.MoviesAndActorsModels)
                 {
                     Result.Add(new ActorDetailsDto{ ActorId = actor.ActorModelsId,                         
                         CharacterDetails = actor.MovieCharacter,
@@ -53,8 +56,8 @@ namespace Movies.Infraestructure.Mapping
             List<GenreDetailsDto> MapGenreDetails(MovieModels movieModels, MovieDetailsDto movieDetailsDto)
             {
                 var Result = new List<GenreDetailsDto>();
-                if (movieModels.MoviesAndGenreList == null) { return Result; }
-                foreach (var genre in movieModels.MoviesAndGenreList)
+                if (movieModels.MoviesAndGenresModels == null) { return Result; }
+                foreach (var genre in movieModels.MoviesAndGenresModels)
                 {
                     Result.Add(new GenreDetailsDto { GenreDetailsId = genre.GenreModelsId, Title = genre.GenreModels.Title});
                 }

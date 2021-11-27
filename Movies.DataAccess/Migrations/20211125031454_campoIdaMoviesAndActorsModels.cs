@@ -8,7 +8,7 @@ namespace Movies.DataAccess.Migrations
         {
             migrationBuilder.AddColumn<int>(
                 name: "Id",
-                table: "MoviesAndActorsList",
+                table: "MoviesAndActorsModels",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
@@ -18,7 +18,7 @@ namespace Movies.DataAccess.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "Id",
-                table: "MoviesAndActorsList");
+                table: "MoviesAndActorsModels");
         }
     }
 }

@@ -16,6 +16,8 @@ namespace Movies.Infraestructure.Repositories
 
         public IMoviesAndActorsRepo MoviesAndActors { get; private set; }
 
+        public IMovieTheatersRepo MovieTheaters { get; private set; }
+
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
@@ -23,6 +25,7 @@ namespace Movies.Infraestructure.Repositories
             Actors = new ActorRepo(_context);
             Movies = new MovieRepo(_context);
             MoviesAndActors = new MoviesAndActorsRepo(_context);
+            MovieTheaters = new MovieTheatersRepo(_context);
         }
 
         public void Dispose()

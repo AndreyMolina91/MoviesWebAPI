@@ -9,6 +9,7 @@ namespace Movies.Domain.IRepos
         IActorRepo Actors { get; }
         IMovieRepo Movies { get; }
         IMoviesAndActorsRepo MoviesAndActors { get; }
+        IMovieTheatersRepo MovieTheaters { get; }
         void SaveData();
     }
 }

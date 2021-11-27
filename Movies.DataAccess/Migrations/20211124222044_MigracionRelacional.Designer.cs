@@ -86,7 +86,7 @@ namespace Movies.DataAccess.Migrations
                     b.ToTable("MovieModels");
                 });
 
-            modelBuilder.Entity("Movies.Domain.Models.MoviesAndActorsList", b =>
+            modelBuilder.Entity("Movies.Domain.Models.MoviesAndActorsModels", b =>
                 {
                     b.Property<int>("ActorModelsId")
                         .HasColumnType("int");
@@ -104,10 +104,10 @@ namespace Movies.DataAccess.Migrations
 
                     b.HasIndex("MovieModelsId");
 
-                    b.ToTable("MoviesAndActorsList");
+                    b.ToTable("MoviesAndActorsModels");
                 });
 
-            modelBuilder.Entity("Movies.Domain.Models.MoviesAndGenreList", b =>
+            modelBuilder.Entity("Movies.Domain.Models.MoviesAndGenreModels", b =>
                 {
                     b.Property<int>("GenreModelsId")
                         .HasColumnType("int");
@@ -119,19 +119,19 @@ namespace Movies.DataAccess.Migrations
 
                     b.HasIndex("MovieModelsId");
 
-                    b.ToTable("MoviesAndGenreList");
+                    b.ToTable("MoviesAndGenreModels");
                 });
 
-            modelBuilder.Entity("Movies.Domain.Models.MoviesAndActorsList", b =>
+            modelBuilder.Entity("Movies.Domain.Models.MoviesAndActorsModels", b =>
                 {
                     b.HasOne("Movies.Domain.Models.ActorModels", "ActorModels")
-                        .WithMany("MoviesAndActorsList")
+                        .WithMany("MoviesAndActorsModels")
                         .HasForeignKey("ActorModelsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Movies.Domain.Models.MovieModels", "MovieModels")
-                        .WithMany("MoviesAndActorsList")
+                        .WithMany("MoviesAndActorsModels")
                         .HasForeignKey("MovieModelsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -141,7 +141,7 @@ namespace Movies.DataAccess.Migrations
                     b.Navigation("MovieModels");
                 });
 
-            modelBuilder.Entity("Movies.Domain.Models.MoviesAndGenreList", b =>
+            modelBuilder.Entity("Movies.Domain.Models.MoviesAndGenreModels", b =>
                 {
                     b.HasOne("Movies.Domain.Models.GenreModels", "GenreModels")
                         .WithMany("MoviesAndGenres")
@@ -150,7 +150,7 @@ namespace Movies.DataAccess.Migrations
                         .IsRequired();
 
                     b.HasOne("Movies.Domain.Models.MovieModels", "MovieModels")
-                        .WithMany("MoviesAndGenreList")
+                        .WithMany("MoviesAndGenreModels")
                         .HasForeignKey("MovieModelsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -162,7 +162,7 @@ namespace Movies.DataAccess.Migrations
 
             modelBuilder.Entity("Movies.Domain.Models.ActorModels", b =>
                 {
-                    b.Navigation("MoviesAndActorsList");
+                    b.Navigation("MoviesAndActorsModels");
                 });
 
             modelBuilder.Entity("Movies.Domain.Models.GenreModels", b =>
@@ -172,9 +172,9 @@ namespace Movies.DataAccess.Migrations
 
             modelBuilder.Entity("Movies.Domain.Models.MovieModels", b =>
                 {
-                    b.Navigation("MoviesAndActorsList");
+                    b.Navigation("MoviesAndActorsModels");
 
-                    b.Navigation("MoviesAndGenreList");
+                    b.Navigation("MoviesAndGenreModels");
                 });
 #pragma warning restore 612, 618
         }
