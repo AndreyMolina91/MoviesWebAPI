@@ -31,7 +31,7 @@ namespace Movies.API.Controllers
         [HttpGet]
         public async Task<IEnumerable<MovieDetailsDto>> GetMoviesModelsList()
         {
-            var listModels = await _unitOfWork.Movies.GetAllModel(includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+            var listModels = await _unitOfWork.Movies.GetAllModel(includeproperties: "MoviesAndActorsList,MoviesAndGenreList");
             var listModelsDto = _mapper.Map<IEnumerable<MovieDetailsDto>>(listModels);
             return listModelsDto;
         }
@@ -57,7 +57,7 @@ namespace Movies.API.Controllers
             }
             //Lista con actores y generos
             var listMovies = await _unitOfWork.Movies
-                .GetAllModel(includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+                .GetAllModel(includeproperties: "MoviesAndActorsList,MoviesAndGenreList");
             var listDto = _mapper.Map<IEnumerable<MovieModelDto>>(listMovies);
 
             return listDto;   
@@ -105,7 +105,7 @@ namespace Movies.API.Controllers
         {
             var movieModelDB = await _unitOfWork.Movies
                 .GetFirstModel(filter:(x=>x.Id==id), 
-                includeproperties: "MoviesAndActorsModels,MoviesAndGenresModels");
+                includeproperties: "MoviesAndActorsList,MoviesAndGenreList");
 
             var editModel = _mapper.Map(movieUpsertModelDto, movieModelDB);
 

@@ -52,7 +52,7 @@ namespace Movies.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MoviesAndActorsModels",
+                name: "MoviesAndActorsList",
                 columns: table => new
                 {
                     ActorModelsId = table.Column<int>(type: "int", nullable: false),
@@ -78,7 +78,7 @@ namespace Movies.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MoviesAndGenresModels",
+                name: "MoviesAndGenreList",
                 columns: table => new
                 {
                     GenreModelsId = table.Column<int>(type: "int", nullable: false),
@@ -103,22 +103,22 @@ namespace Movies.DataAccess.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_MoviesAndActorsModels_MovieModelsId",
-                table: "MoviesAndActorsModels",
+                table: "MoviesAndActorsList",
                 column: "MovieModelsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MoviesAndGenresModels_MovieModelsId",
-                table: "MoviesAndGenresModels",
+                table: "MoviesAndGenreList",
                 column: "MovieModelsId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "MoviesAndActorsModels");
+                name: "MoviesAndActorsList");
 
             migrationBuilder.DropTable(
-                name: "MoviesAndGenresModels");
+                name: "MoviesAndGenreList");
 
             migrationBuilder.DropTable(
                 name: "ActorModels");
