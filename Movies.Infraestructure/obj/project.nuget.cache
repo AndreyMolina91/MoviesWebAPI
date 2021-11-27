@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DrmUUYOCGWgVhVFYAAcc+SitzuT4YvxTF+TTtz5SedblgdF1RWV76S76sDkdFYjbYpZ+32LFBuVeTkPe8uQDgA==",
+  "dgSpecHash": "qSQORVP168mi2l7kMIRX7fUH2wsCMTYplfHvwDYWxLpWtnmzHxUhSBf3iYV2AiK4jgAZvRbxEeV3L/dI55mqSw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\MoviesMicroserviceAPI\\Movies.Infraestructure\\Movies.Infraestructure.csproj",
   "expectedPackageFiles": [
@@ -21,7 +21,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.12\\microsoft.aspnetcore.http.features.5.0.12.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.12\\microsoft.aspnetcore.jsonpatch.5.0.12.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.0\\microsoft.aspnetcore.mvc.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.5\\microsoft.aspnetcore.mvc.core.2.2.5.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.12\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.12.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.responsecaching.abstractions\\2.2.0\\microsoft.aspnetcore.responsecaching.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.routing\\2.2.0\\microsoft.aspnetcore.routing.2.2.0.nupkg.sha512",

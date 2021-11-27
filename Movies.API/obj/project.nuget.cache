@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rIYQKCMOy0/UFJgY9KttuycdlrCXIgBDNf9tDQiUcSqCRhay0qEBpVDSYC5K6Xt7+EZz4HE0GfYdAADbX8fJqQ==",
+  "dgSpecHash": "9yl9T3c5f90pgDVgX5z7rfmyAIj1hn8ZwfdgRVDgEddxO5ZY/YTw2qe8VFwoyYIi/MQUzs8b6nvqF56Ck5yIBA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\MoviesMicroserviceAPI\\Movies.API\\Movies.API.csproj",
   "expectedPackageFiles": [
@@ -23,7 +23,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.12\\microsoft.aspnetcore.http.features.5.0.12.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.0\\microsoft.aspnetcore.jsonpatch.6.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.0\\microsoft.aspnetcore.mvc.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.5\\microsoft.aspnetcore.mvc.core.2.2.5.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.12\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.12.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",

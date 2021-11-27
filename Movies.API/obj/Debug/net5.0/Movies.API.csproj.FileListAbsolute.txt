@@ -154,3 +154,5 @@ C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\M
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Lenovo\source\repos\MoviesMicroserviceAPI\Movies.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
